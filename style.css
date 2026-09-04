@@ -39,11 +39,22 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 80px;
+    padding: 180px 140px;
 }
 
 .main h1 {
     color: #FFFFFF;
     font-size: 3.5rem;
+}
+
+#images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
 }
 
 .footer {
