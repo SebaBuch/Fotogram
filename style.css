@@ -83,6 +83,7 @@ html {
     font-family: 'Figtree';
     font-style: normal;
     font-weight: 800;
+    text-align: center;
 }
 
 #images {
@@ -131,7 +132,7 @@ html {
 }
 
 .footer-copyright {
-    color: #FFFFFF;
+    color: #99ACB3;
     font-family: 'Figtree';
     font-style: normal;
     font-weight: 400;
@@ -216,4 +217,60 @@ dialog {
     background-color: #fd5b4f10;
     font-size: 24px;
     cursor: pointer;
+}
+
+@media screen and (min-width: 1440px) {
+
+    .header {
+        padding-left: max(140px, calc(50% - 720px));
+        padding-right: max(140px, calc(50% - 720px));
+    }
+
+    .main {
+        padding-left: max(140px, calc(50% - 720px));
+        padding-right: max(140px, calc(50% - 720px));
+    }
+}
+
+@media screen and (min-width: 762px) and (max-width:1439px) {
+    .main {
+        padding-left: clamp(20px, calc(50% - 381px), 160px);
+        padding-right: clamp(20px, calc(50% - 381px), 160px);
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width:761px) {
+
+    .header {
+        padding-left: clamp(5px, calc(50% - 160px), 20px);
+        padding-right: clamp(5px, calc(50% - 160px), 20px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main {
+        padding-left: clamp(5px, calc(50% - 160px), 20px);
+        padding-right: clamp(5px, calc(50% - 160px), 20px);
+    }
+
+    .main h1 {
+        font-size: 3rem;
+    }
+
+    #images {
+        gap: 8px;
+    }
+
+    .footer-all {
+        padding-left: clamp(5px, calc(50% - 160px), 20px);
+        padding-right: clamp(5px, calc(50% - 160px), 20px);
+    }
+
+    #dialog-img {
+        object-fit: cover;
+        height: 375px;
+        width: 90vw;
+    }
+
 }
