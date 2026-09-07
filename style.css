@@ -42,6 +42,10 @@ html {
     font-size: 16px;
 }
 
+body {
+    background-color: #06171E;
+}
+
 .header {
     background-color: #09212A;
     display: flex;
@@ -135,11 +139,12 @@ html {
     color: #FFFFFF;
 }
 
-.footer-copyright {
+.footer-copyright p {
     color: #99ACB3;
     font-family: 'Figtree';
     font-style: normal;
     font-weight: 400;
+    font-size: 0.875rem;
 }
 
 dialog {
