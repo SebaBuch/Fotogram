@@ -175,6 +175,12 @@ dialog {
     background-color: #09212A;
     color: #FFFFFF;
     font-size: 24px;
+
+}
+
+#close-dialog:hover {
+    background-color: #124658;
+    border-radius: 100px;
 }
 
 #dialog-titel {
@@ -197,7 +203,8 @@ dialog {
     font-weight: 500;
 }
 
-#prev-img {
+#prev-img,
+#next-img {
     width: 60px;
     height: 60px;
     border-radius: 100%;
@@ -208,15 +215,9 @@ dialog {
     cursor: pointer;
 }
 
-#next-img {
-    width: 60px;
-    height: 60px;
-    border-radius: 100%;
-    border: none;
-    color: #FD5B4F;
-    background-color: #fd5b4f10;
-    font-size: 24px;
-    cursor: pointer;
+#next-img:hover,
+#prev-img:hover {
+    background-color: #fd5b4f20;
 }
 
 @media screen and (min-width: 1440px) {
@@ -267,10 +268,31 @@ dialog {
         padding-right: clamp(5px, calc(50% - 160px), 20px);
     }
 
+    .dialog-header {
+        height: 70px;
+    }
+
+    #close-dialog {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    #dialog-titel {
+        display: flex;
+        align-items: flex-end;
+    }
+
     #dialog-img {
         object-fit: cover;
         height: 375px;
+        width: 100%;
+    }
+
+    #dialog[open] {
         width: 90vw;
+        max-width: 90vw;
+        padding: 24px 20px;
+        gap: 24px;
     }
 
 }

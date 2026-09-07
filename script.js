@@ -34,7 +34,8 @@ function render() {
 }
 
 function templateImg(i) {
-    return `<img class='myImages' src="${items[i]}">`;
+    const altText = items[i].split('/').pop().split('.')[0];
+    return `<img class='myImages' src="${items[i]}" alt="${altText}">`;
 }
 
 imagesRef.addEventListener('click', function (event) {
