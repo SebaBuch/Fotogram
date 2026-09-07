@@ -1,3 +1,36 @@
+@font-face {
+    font-display: swap;
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./assets/fonts/figtree-v9-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./assets/fonts/figtree-v9-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./assets/fonts/figtree-v9-latin-700.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 800;
+    src: url('./assets/fonts/figtree-v9-latin-800.woff2') format('woff2');
+
+}
+
 * {
     margin: 0;
     box-sizing: border-box;
@@ -47,6 +80,9 @@ html {
 .main h1 {
     color: #FFFFFF;
     font-size: 3.5rem;
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 800;
 }
 
 #images {
@@ -62,10 +98,12 @@ html {
     height: 150px;
     border: 2px solid #124658;
     border-radius: 16px;
+    object-fit: cover;
+    cursor: pointer;
 }
 
 .footer {
-    background-color: #06171E;
+    background-color: #09212A;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,13 +132,28 @@ html {
 
 .footer-copyright {
     color: #FFFFFF;
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 400;
 }
 
-#dialog {
+dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+}
+
+#dialog[open] {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: #09212A;
+    padding: 56px 64px;
+    gap: 48px;
+    border-radius: 40px;
 }
 
 .dialog-header {
@@ -109,7 +162,58 @@ html {
     justify-content: space-between;
 }
 
-#dialog-img{
+#dialog-img {
     width: 560px;
     height: 375px;
+    object-fit: cover;
+}
+
+#close-dialog {
+    border: none;
+    cursor: pointer;
+    background-color: #09212A;
+    color: #FFFFFF;
+    font-size: 24px;
+}
+
+#dialog-titel {
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 700;
+}
+
+.dialog-footer {
+    display: flex;
+    gap: 48px;
+    color: #FFFFFF;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 500;
+}
+
+#prev-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    border: none;
+    color: #FD5B4F;
+    background-color: #fd5b4f10;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#next-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    border: none;
+    color: #FD5B4F;
+    background-color: #fd5b4f10;
+    font-size: 24px;
+    cursor: pointer;
 }

@@ -62,11 +62,22 @@ nextImgRef.addEventListener('click', function () {
 function openDialog() {
     updateDialog();
     dialogRef.showModal();
+    document.body.style.overflow = 'hidden';
 }
 function updateDialog() {
     dialogImgRef.src = items[currentIndex];
     dialogTitelRef.textContent = items[currentIndex].split('/').pop().split('.')[0];
-    counterRef.textContent = `${ currentIndex + 1}/${items.length}`;
+    counterRef.textContent = `${currentIndex + 1}/${items.length}`;
 }
+
+dialogRef.addEventListener('close', function () {
+    document.body.style.overflow = '';
+});
+
+dialogRef.addEventListener('click', function (event) {
+    if (event.target === dialogRef) {
+        dialogRef.close();
+    }
+});
 
 init();
