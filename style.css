@@ -57,6 +57,13 @@ html {
     gap: 16px;
 }
 
+.myImages {
+    width: 150px;
+    height: 150px;
+    border: 2px solid #124658;
+    border-radius: 16px;
+}
+
 .footer {
     background-color: #06171E;
     display: flex;
@@ -87,4 +94,22 @@ html {
 
 .footer-copyright {
     color: #FFFFFF;
+}
+
+#dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dialog-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#dialog-img{
+    width: 560px;
+    height: 375px;
 }
