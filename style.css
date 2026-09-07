@@ -103,6 +103,10 @@ html {
     cursor: pointer;
 }
 
+.myImages:hover {
+    border: 2px solid #6BC1E1;
+}
+
 .footer {
     background-color: #09212A;
     display: flex;
