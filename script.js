@@ -1,15 +1,17 @@
-let items = ["assets/images/img1.jpg",
-    "assets/images/img2.jpg",
-    "assets/images/img3.jpg",
-    "assets/images/img4.jpg",
-    "assets/images/img5.jpg",
-    "assets/images/img6.jpg",
-    "assets/images/img7.jpg",
-    "assets/images/img8.jpg",
-    "assets/images/img9.jpg",
-    "assets/images/img10.jpg",
-    "assets/images/img11.jpg",
-    "assets/images/img12.jpg"];
+let items = [
+    "assets/images/ice-landscape.jpg",
+    "assets/images/city-night.jpg",
+    "assets/images/clouds.jpg",
+    "assets/images/bird.jpg",
+    "assets/images/above-hurrican.jpg",
+    "assets/images/water-mountain.jpg",
+    "assets/images/duck-water.jpg",
+    "assets/images/man-fishing.jpg",
+    "assets/images/bird-stones.jpg",
+    "assets/images/jaguar.jpg",
+    "assets/images/top-mountain.jpg",
+    "assets/images/iced-tree.jpg"
+];
 
 
 const imagesRef = document.getElementById('images');
@@ -35,16 +37,27 @@ function render() {
 
 function templateImg(i) {
     const altText = items[i].split('/').pop().split('.')[0];
-    return `<img class='myImages' src="${items[i]}" alt="${altText}">`;
+    return `<img class='myImages' src="${items[i]}" alt="${altText}" tabindex="0" role="button">`;
 }
 
 imagesRef.addEventListener('click', function (event) {
     if (event.target.classList.contains('myImages')) {
-        const clickedSrc = event.target.src;
-        currentIndex = items.findIndex(item => clickedSrc.includes(item));
-        openDialog();
+        openImageFromEvent(event);
     }
 });
+
+imagesRef.addEventListener('keydown', function (event) {
+    if (event.target.classList.contains('myImages') && (event.key === 'Enter' || event.key === ' ')) {
+        event.preventDefault();
+        openImageFromEvent(event);
+    }
+});
+
+function openImageFromEvent(event) {
+    const clickedSrc = event.target.src;
+    currentIndex = items.findIndex(item => clickedSrc.includes(item));
+    openDialog();
+}
 
 closeDialogRef.addEventListener('click', function () {
     dialogRef.close();
@@ -65,9 +78,12 @@ function openDialog() {
     dialogRef.showModal();
     document.body.style.overflow = 'hidden';
 }
+
 function updateDialog() {
+    const altText = items[currentIndex].split('/').pop().split('.')[0];
     dialogImgRef.src = items[currentIndex];
-    dialogTitelRef.textContent = items[currentIndex].split('/').pop().split('.')[0];
+    dialogImgRef.alt = altText;
+    dialogTitelRef.textContent = altText;
     counterRef.textContent = `${currentIndex + 1}/${items.length}`;
 }
 
