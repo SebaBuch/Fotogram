@@ -217,6 +217,12 @@ dialog {
     font-weight: 500;
 }
 
+#counter {
+    display: inline-block;
+    min-width: 5ch;
+    text-align: center;
+}
+
 #prev-img,
 #next-img {
     width: 60px;
