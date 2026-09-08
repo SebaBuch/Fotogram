@@ -244,6 +244,14 @@ section {
     background-color: #fd5b4f20;
 }
 
+@media screen and (min-width: 1820px) {
+    #dialog-img {
+        width: 800px;
+        height: 600px;
+        object-fit: cover;
+    }
+}
+
 @media screen and (min-width: 1440px) {
 
     .header {
@@ -257,8 +265,6 @@ section {
     }
 
     #dialog-img {
-        width: 800px;
-        height: 600px;
         object-fit: cover;
     }
 }
@@ -330,7 +336,7 @@ section {
         gap: 24px;
     }
 
-    .dialog-footer{
+    .dialog-footer {
         gap: 25px;
     }
 
