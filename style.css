@@ -177,10 +177,15 @@ dialog {
     justify-content: space-between;
 }
 
+section {
+    width: 100%;
+}
+
 #dialog-img {
-    width: 560px;
-    height: 375px;
     object-fit: cover;
+    aspect-ratio: 560 / 375;
+    width: 100%;
+    height: auto;
 }
 
 #close-dialog {
@@ -258,6 +263,12 @@ dialog {
         padding-left: clamp(20px, calc(50% - 381px), 160px);
         padding-right: clamp(20px, calc(50% - 381px), 160px);
     }
+
+    #dialog-img {
+        object-fit: cover;
+    }
+
+
 }
 
 @media screen and (min-width: 320px) and (max-width:761px) {
@@ -304,8 +315,6 @@ dialog {
 
     #dialog-img {
         object-fit: cover;
-        height: 375px;
-        width: 100%;
     }
 
     #dialog[open] {
